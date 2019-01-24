@@ -1,1 +1,1 @@
-# rspatial.github.io
+# geospatial-data-science.github.io
