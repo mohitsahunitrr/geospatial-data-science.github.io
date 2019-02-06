@@ -299,7 +299,7 @@ $(document).ready(function () {
       <a href="about.html">Content</a>
     </li>
     <li>
-      <a href="getting-startted-spatial-data.html">Getting Startted with Spatial Data in R</a>
+      <a href="getting-started-with-r.html">Getting Started with R</a>
     </li>
     <li>
       <a href="read-write-spatial-data.html">Read and Write Spatial Data in R</a>
@@ -559,20 +559,20 @@ m.f</code></pre>
 ## proj4string : [NA]
 ## Number of points: 368
 ## Data attributes:
-##    var1.pred         var1.var         observed         residual        
-##  Min.   :0.1801   Min.   :0.8041   Min.   :-1.499   Min.   :-3.187527  
-##  1st Qu.:1.3976   1st Qu.:0.9759   1st Qu.: 1.149   1st Qu.:-0.695644  
-##  Median :1.9963   Median :1.0460   Median : 1.974   Median : 0.009006  
-##  Mean   :1.9741   Mean   :1.0551   Mean   : 1.981   Mean   : 0.007056  
-##  3rd Qu.:2.5254   3rd Qu.:1.1204   3rd Qu.: 2.919   3rd Qu.: 0.746974  
-##  Max.   :3.6707   Max.   :1.4025   Max.   : 5.423   Max.   : 2.989471  
+##    var1.pred          var1.var         observed         residual        
+##  Min.   :0.09685   Min.   :0.8118   Min.   :-1.499   Min.   :-3.322559  
+##  1st Qu.:1.45533   1st Qu.:0.9819   1st Qu.: 1.149   1st Qu.:-0.720574  
+##  Median :1.99373   Median :1.0492   Median : 1.974   Median : 0.009772  
+##  Mean   :1.98323   Mean   :1.0613   Mean   : 1.981   Mean   :-0.002032  
+##  3rd Qu.:2.55045   3rd Qu.:1.1284   3rd Qu.: 2.919   3rd Qu.: 0.689298  
+##  Max.   :3.91871   Max.   :1.4058   Max.   : 5.423   Max.   : 2.986926  
 ##      zscore               fold       
-##  Min.   :-3.285033   Min.   : 1.000  
-##  1st Qu.:-0.665389   1st Qu.: 3.000  
-##  Median : 0.009242   Median : 6.000  
-##  Mean   : 0.006811   Mean   : 5.666  
-##  3rd Qu.: 0.725063   3rd Qu.: 8.000  
-##  Max.   : 2.920226   Max.   :10.000</code></pre>
+##  Min.   :-3.412563   Min.   : 1.000  
+##  1st Qu.:-0.686537   1st Qu.: 3.000  
+##  Median : 0.009391   Median : 6.000  
+##  Mean   :-0.000888   Mean   : 5.546  
+##  3rd Qu.: 0.679506   3rd Qu.: 8.000  
+##  Max.   : 3.021788   Max.   :10.000</code></pre>
 <div id="residuals-plot" class="section level4">
 <h4>Residuals plot</h4>
 <pre class="r"><code>bubble(cv, zcol = &quot;residual&quot;, maxsize = 2.0,  main = &quot;K-fold Cross-validation residuals&quot;)</code></pre>
@@ -587,13 +587,13 @@ RMSE&lt;-round(sqrt(mean(cv$residual^2)),3)
 MSDR&lt;-mean(cv$residual^2/cv$var1.var)
 
 ME</code></pre>
-<pre><code>## [1] 0.007</code></pre>
+<pre><code>## [1] -0.002</code></pre>
 <pre class="r"><code>MAE</code></pre>
-<pre><code>## [1] 0.834</code></pre>
+<pre><code>## [1] 0.842</code></pre>
 <pre class="r"><code>RMSE</code></pre>
-<pre><code>## [1] 1.047</code></pre>
+<pre><code>## [1] 1.061</code></pre>
 <pre class="r"><code>MSDR</code></pre>
-<pre><code>## [1] 1.046713</code></pre>
+<pre><code>## [1] 1.068851</code></pre>
 </div>
 </div>
 <div id="actual-vs.predicted-values-linear-regression" class="section level3">
@@ -606,19 +606,19 @@ summary(lm.cv)</code></pre>
 ## lm(formula = cv$var1.pred ~ cv$observed)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -1.6853 -0.4041 -0.0317  0.4413  2.1361 
+##      Min       1Q   Median       3Q      Max 
+## -1.78029 -0.38672 -0.02555  0.41988  2.07663 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  1.29619    0.05948   21.79   &lt;2e-16 ***
-## cv$observed  0.34219    0.02520   13.58   &lt;2e-16 ***
+## (Intercept)  1.32144    0.06048   21.85   &lt;2e-16 ***
+## cv$observed  0.33403    0.02562   13.04   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.6204 on 366 degrees of freedom
-## Multiple R-squared:  0.3351, Adjusted R-squared:  0.3333 
-## F-statistic: 184.4 on 1 and 366 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.6308 on 366 degrees of freedom
+## Multiple R-squared:  0.3171, Adjusted R-squared:  0.3153 
+## F-statistic:   170 on 1 and 366 DF,  p-value: &lt; 2.2e-16</code></pre>
 <div id="plot" class="section level4">
 <h4>1:1 Plot</h4>
 <pre class="r"><code>plot(cv$observed, cv$var1.pred,main=list(&quot;K-fold Cross Validation&quot;,cex=1),
@@ -680,7 +680,7 @@ ME.LOOCV</code></pre>
 <pre class="r"><code>RMSE.LOOCV</code></pre>
 <pre><code>## [1] 1.042</code></pre>
 <pre class="r"><code>MSDR.LOOCV</code></pre>
-<pre><code>## [1] 1.037041</code></pre>
+<pre><code>## [1] 1.034742</code></pre>
 </div>
 
 

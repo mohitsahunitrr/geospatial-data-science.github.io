@@ -299,7 +299,7 @@ $(document).ready(function () {
       <a href="about.html">Content</a>
     </li>
     <li>
-      <a href="getting-startted-spatial-data.html">Getting Startted with Spatial Data in R</a>
+      <a href="getting-started-with-r.html">Getting Started with R</a>
     </li>
     <li>
       <a href="read-write-spatial-data.html">Read and Write Spatial Data in R</a>
@@ -647,9 +647,9 @@ summary(model)</code></pre>
 <h4>Evaluate the model</h4>
 <pre class="r"><code>score &lt;- model %&gt;% evaluate(test, testtarget, batch_size = 100)
 cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test loss: 0.5166091</code></pre>
+<pre><code>## Test loss: 0.5126728</code></pre>
 <pre class="r"><code>cat(&#39;Test accuracy:&#39;, score[[2]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test accuracy: 0.9254258</code></pre>
+<pre><code>## Test accuracy: 0.9212713</code></pre>
 </div>
 <div id="prediction-confusion-matrix---test-data" class="section level4">
 <h4>Prediction &amp; confusion matrix - test data</h4>
@@ -659,10 +659,10 @@ cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
 table(testtarget,class.test)</code></pre>
 <pre><code>##           class.test
 ## testtarget    0    1    2    3    4
-##          0 1031   81   29    1    0
-##          1   89  795   41    3    1
-##          2   66   12 1497   15    0
-##          3    0    0   17  949    0
+##          0 1034   77   31    0    0
+##          1   96  778   52    3    0
+##          2   74    3 1490   23    0
+##          3    0    0   16  950    0
 ##          4    0    0    4    0  183</code></pre>
 </div>
 <div id="predicted-class-probability" class="section level4">

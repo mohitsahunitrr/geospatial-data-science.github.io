@@ -22,8 +22,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -99,9 +100,6 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
-summary {
-  display: list-item;
-}
 </style>
 
 
@@ -116,6 +114,7 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
+
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -135,43 +134,6 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -193,77 +155,18 @@ $(document).ready(function () {
 });
 </script>
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -299,7 +202,7 @@ $(document).ready(function () {
       <a href="about.html">Content</a>
     </li>
     <li>
-      <a href="getting-startted-spatial-data.html">Getting Startted with Spatial Data in R</a>
+      <a href="getting-started-with-r.html">Getting Started with R</a>
     </li>
     <li>
       <a href="read-write-spatial-data.html">Read and Write Spatial Data in R</a>
@@ -437,7 +340,7 @@ $(document).ready(function () {
       <a href="support-vector-machine.html">Support Vector Machine</a>
     </li>
     <li>
-      <a href="naive-bayes.html">Naïve Bayes</a>
+      <a href="naive-bayes.html">NaÃ¯ve Bayes</a>
     </li>
     <li>
       <a href="exboost.html">eXtreme Gradient Boosting</a>
@@ -492,8 +395,8 @@ $(document).ready(function () {
 <p>This tutorial will show how to implement <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Neural Network</a> for <a href="https://gis.stackexchange.com/questions/237461/distinction-between-pixel-based-and-object-based-classification">pixel based</a> <a href="https://articles.extension.org/pages/40214/whats-the-difference-between-a-supervised-and-unsupervised-image-classification">supervised classification</a> of <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2">Sentinel-2 multispectral images</a> using <a href="https://keras.rstudio.com/">keras</a> package in <a href="https://cloud.r-project.org/">R</a> under <a href="https://www.microsoft.com/en-us/software-download/windows10">Windows 10</a>.</p>
 <p><a href="https://keras.rstudio.com/">keras</a> is a popular Python package for deep neural networks with multiple back ends, including <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://docs.microsoft.com/en-us/cognitive-toolkit/">Microsoft Cognitive Toolkit (CNTK)</a>, and <a href="http://deeplearning.net/software/theano/">Theano</a>. Two R packages allow you to use [Keras[(<a href="https://keras.rstudio.com/" class="uri">https://keras.rstudio.com/</a>)] from R: <a href="https://keras.rstudio.com/">keras</a> and <a href="https://github.com/statsmaths/kerasR">kerasR</a>. The <strong>keras</strong> package is able to provide a flexible and feature-rich API and can run both <a href="https://www.tensorflow.org/install/install_windows">CPU and GUP version of TensorFlow</a> in both Windows and Linux. If you want to run this tutorial with <a href="https://www.tensorflow.org/install/install_windows">GUP version of TensorFlow</a> you need following prerequisites in your system:</p>
 <ul>
-<li><p><a href="https://developer.nvidia.com/cuda-gpus">NVIDIA GUP</a>: First, you must make sure weather your computer is running with <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA® GPU</a> or not. Follow the instruction as described <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
-<li><p><a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>: If you have an NVIDIA® GPU in your system, you need to download and install <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>. Detail installation steps can be found <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
+<li><p><a href="https://developer.nvidia.com/cuda-gpus">NVIDIA GUP</a>: First, you must make sure weather your computer is running with <a href="https://developer.nvidia.com/cuda-gpus">NVIDIAÂ® GPU</a> or not. Follow the instruction as described <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
+<li><p><a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>: If you have an NVIDIAÂ® GPU in your system, you need to download and install <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>. Detail installation steps can be found <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
 <li><p><a href="https://developer.nvidia.com/cudnn">cuDNN v7.0</a>: The download the zip file version <a href="https://developer.nvidia.com/cudnn">cuDNN v7.0</a> for your CUDA Toolkit v9.0.You need to extract the zip file and add the location where you extracted it to your system PATH. Detail installation steps can be found here <a href="F:\DeepLearning_tutorial\Satellite_Image_Calssification\h20_R_ImageCalssification\keras_R\Detail%20installation%20steps%20are%20described%20here">here</a>.</p></li>
 </ul>
 <p>Detail installation steps of Keras back-end GPU or CUP version of Tensorflow can be found <a href="https://tensorflow.rstudio.com/keras/reference/install_keras.html">here</a>.</p>
@@ -647,9 +550,9 @@ summary(model)</code></pre>
 <h4>Evaluate the model</h4>
 <pre class="r"><code>score &lt;- model %&gt;% evaluate(test, testtarget, batch_size = 100)
 cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test loss: 0.5167538</code></pre>
+<pre><code>## Test loss: 0.5140805</code></pre>
 <pre class="r"><code>cat(&#39;Test accuracy:&#39;, score[[2]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test accuracy: 0.9250105</code></pre>
+<pre><code>## Test accuracy: 0.9228202</code></pre>
 </div>
 <div id="prediction-confusion-matrix---test-data" class="section level4">
 <h4>Prediction &amp; confusion matrix - test data</h4>
@@ -659,11 +562,11 @@ cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
 table(testtarget,class.test)</code></pre>
 <pre><code>##           class.test
 ## testtarget    0    1    2    3    4
-##          0  995   94   13    3    0
-##          1   74  773   40    2    0
-##          2   69    9 1517   26    0
-##          3    0    0   26  964    0
-##          4    0    0    2    0  167</code></pre>
+##          0  971   75   32    2    0
+##          1   67  793   48    5    0
+##          2   69    8 1532   30    0
+##          3    0    0   31  958    0
+##          4    0    0    3    0  170</code></pre>
 </div>
 <div id="predicted-class-probability" class="section level4">
 <h4>Predicted Class Probability</h4>

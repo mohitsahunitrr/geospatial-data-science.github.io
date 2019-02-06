@@ -22,8 +22,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -99,9 +100,6 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
-summary {
-  display: list-item;
-}
 </style>
 
 
@@ -116,6 +114,7 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
+
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -135,43 +134,6 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -193,77 +155,18 @@ $(document).ready(function () {
 });
 </script>
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -299,7 +202,7 @@ $(document).ready(function () {
       <a href="about.html">Content</a>
     </li>
     <li>
-      <a href="getting-startted-spatial-data.html">Getting Startted with Spatial Data in R</a>
+      <a href="getting-started-with-r.html">Getting Started with R</a>
     </li>
     <li>
       <a href="read-write-spatial-data.html">Read and Write Spatial Data in R</a>
@@ -437,7 +340,7 @@ $(document).ready(function () {
       <a href="support-vector-machine.html">Support Vector Machine</a>
     </li>
     <li>
-      <a href="naive-bayes.html">Naïve Bayes</a>
+      <a href="naive-bayes.html">NaÃ¯ve Bayes</a>
     </li>
     <li>
       <a href="exboost.html">eXtreme Gradient Boosting</a>
@@ -491,7 +394,7 @@ $(document).ready(function () {
 <p><strong>Deep Neural Networks (or Deep Dearning)</strong> is based on a multi-layer, feed-forward artificial neural network that is trained with stochastic gradient descent using back-propagation. The network can contain many hidden layers consisting of neurons with activation functions. Advanced features such as adaptive learning rate, rate annealing, momentum training, dropout, L1 or L2 regularization, checkpointing, and grid search enable high predictive accuracy. Each computer node trains a copy of the global model parameters on its local data with multi-threading (asynchronously) and contributes periodically to the global model via model averaging across the network.</p>
 <p>In this tutorial will show how to implement a Deep Neural Network for pixel based supervised classification of Sentinel-2 multispectral images using the <a href="http://h2o-release.s3.amazonaws.com/h2o/rel-lambert/5/docs-website/Ruser/Rinstall.html">H20</a> package in R.</p>
 <p><a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/welcome.html">H2O is an open source, in-memory, distributed, fast, and scalable machine learning and predictive analytics platform that allows you to build machine learning models on big data and provides easy productionalization of those models in an enterprise environment</a>. It’s core code is written in Java and can read data in parallel from a distributed cluster and also from local cluster. H2O allows access to all the capabilities of H2O from an external program or script via JSON over HTTP. The Rest API is used by H2O’s <a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/welcome.html">web interface (Flow UI)</a>, <a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/welcome.html">R binding (H2O-R)</a>, and <a href="http://docs.h2o.ai/h2o/latest-stable/h2o-docs/welcome.html">Python binding (H2O-Python)</a>. Requirement and installation steps in R can be found <a href="http://h2o-release.s3.amazonaws.com/h2o/rel-wheeler/2/index.html">here</a>.</p>
-<p>First, we will split the “point_data” into a training set (75% of the data), a validation set (12%) and a test set (13%) data. The validation data set will be used to optimize the model parameters during the training process. The model’s performance will be tested with the test data set. Finally, we will predict land use classes using a grid data set.</p>
+<p>First, we will split the âpoint_dataâ into a training set (75% of the data), a validation set (12%) and a test set (13%) data. The validation data set will be used to optimize the model parameters during the training process. The modelâs performance will be tested with the test data set. Finally, we will predict land use classes using a grid data set.</p>
 <p><strong>Tuning and Optimizations parameters:</strong></p>
 <ul>
 <li><p>Four hidden layers with 200 neurons and Rectifier Linear (ReLU) as an activation function for the of neurons.</p></li>
@@ -599,14 +502,14 @@ x &lt;- setdiff(names(train), y)</code></pre>
 ## Model Key:  Deep_Learning 
 ## Status of Neuron Layers: predicting Class, 5-class classification, multinomial distribution, CrossEntropy loss, 123,805 weights/biases, 1.4 MB, 198,374 training samples, mini-batch size 1
 ##   layer units             type dropout       l1       l2 mean_rate
-## 1     1    10            Input  0.00 %       NA       NA        NA
+## 1     1    10            Input  0.00 %                            
 ## 2     2   200 RectifierDropout 20.00 % 0.000001 0.000001  0.002778
 ## 3     3   200 RectifierDropout 10.00 % 0.000001 0.000001  0.017429
 ## 4     4   200 RectifierDropout 10.00 % 0.000001 0.000001  0.009463
 ## 5     5   200 RectifierDropout  0.00 % 0.000001 0.000001  0.026793
-## 6     6     5          Softmax      NA 0.000001 0.000001  0.044096
+## 6     6     5          Softmax         0.000001 0.000001  0.044096
 ##   rate_rms momentum mean_weight weight_rms mean_bias bias_rms
-## 1       NA       NA          NA         NA        NA       NA
+## 1                                                            
 ## 2 0.001755 0.000000    0.065016   0.182215  0.360042 0.080736
 ## 3 0.017699 0.000000   -0.029830   0.097819  0.916611 0.146557
 ## 4 0.012781 0.000000   -0.016788   0.078863  0.962554 0.029205
@@ -741,20 +644,20 @@ x &lt;- setdiff(names(train), y)</code></pre>
 ## 
 ## Scoring History: 
 ##              timestamp          duration training_speed   epochs
-## 1  2019-01-23 23:01:06         0.000 sec             NA  0.00000
-## 2  2019-01-23 23:01:27  5 min 39.955 sec    845 obs/sec  1.00000
-## 3  2019-01-23 23:01:47  5 min 59.412 sec    933 obs/sec  2.00000
-## 4  2019-01-23 23:02:05  6 min 17.582 sec    990 obs/sec  3.00000
-## 5  2019-01-23 23:02:22  6 min 34.823 sec   1034 obs/sec  4.00000
-## 6  2019-01-23 23:02:39  6 min 51.594 sec   1069 obs/sec  5.00000
-## 7  2019-01-23 23:02:55  7 min  8.012 sec   1098 obs/sec  6.00000
-## 8  2019-01-23 23:03:11  7 min 24.199 sec   1121 obs/sec  7.00000
-## 9  2019-01-23 23:03:28  7 min 40.345 sec   1140 obs/sec  8.00000
-## 10 2019-01-23 23:03:43  7 min 56.136 sec   1158 obs/sec  9.00000
-## 11 2019-01-23 23:03:59  8 min 11.897 sec   1173 obs/sec 10.00000
-## 12 2019-01-23 23:04:15  8 min 27.624 sec   1185 obs/sec 11.00000
+## 1  2019-02-05 18:54:29         0.000 sec                 0.00000
+## 2  2019-02-05 18:55:06 25 min 48.252 sec    486 obs/sec  1.00000
+## 3  2019-02-05 18:55:40 26 min 21.612 sec    535 obs/sec  2.00000
+## 4  2019-02-05 18:56:11 26 min 53.139 sec    565 obs/sec  3.00000
+## 5  2019-02-05 18:56:41 27 min 23.691 sec    587 obs/sec  4.00000
+## 6  2019-02-05 18:57:11 27 min 53.098 sec    605 obs/sec  5.00000
+## 7  2019-02-05 18:57:40 28 min 22.097 sec    619 obs/sec  6.00000
+## 8  2019-02-05 19:06:54 37 min 35.860 sec    174 obs/sec  7.00000
+## 9  2019-02-05 19:07:23 38 min  4.374 sec    192 obs/sec  8.00000
+## 10 2019-02-05 19:07:50 38 min 32.190 sec    209 obs/sec  9.00000
+## 11 2019-02-05 19:08:18 38 min 59.576 sec    225 obs/sec 10.00000
+## 12 2019-02-05 19:08:45 39 min 27.128 sec    240 obs/sec 11.00000
 ##    iterations       samples training_rmse training_logloss training_r2
-## 1           0      0.000000            NA               NA          NA
+## 1           0      0.000000                                           
 ## 2           1  18034.000000       0.30807          0.31402     0.92909
 ## 3           2  36068.000000       0.23927          0.18531     0.95723
 ## 4           3  54102.000000       0.22067          0.16103     0.96362
@@ -767,7 +670,7 @@ x &lt;- setdiff(names(train), y)</code></pre>
 ## 11         10 180340.000000       0.15287          0.08055     0.98254
 ## 12         11 198374.000000       0.16720          0.09567     0.97911
 ##    training_classification_error validation_rmse validation_logloss
-## 1                             NA              NA                 NA
+## 1                                                                  
 ## 2                        0.11761         0.30326            0.30153
 ## 3                        0.06920         0.24144            0.18801
 ## 4                        0.06155         0.21938            0.15935
@@ -780,7 +683,7 @@ x &lt;- setdiff(names(train), y)</code></pre>
 ## 11                       0.03488         0.15253            0.08104
 ## 12                       0.03471         0.16421            0.09223
 ##    validation_r2 validation_classification_error
-## 1             NA                              NA
+## 1                                               
 ## 2        0.93046                         0.11491
 ## 3        0.95592                         0.07182
 ## 4        0.96361                         0.06224

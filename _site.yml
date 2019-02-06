@@ -12,8 +12,8 @@ navbar:
     menu:
     - text: Content
       href: about.html
-    - text: Getting Startted with Spatial Data in R
-      href: getting-startted-spatial-data.html
+    - text: Getting Started with R
+      href: getting-started-with-r.html
     - text: Read and Write Spatial Data in R
       href: read-write-spatial-data.html
     - text: Map Projection and Coordinate Reference Systems
