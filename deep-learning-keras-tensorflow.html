@@ -340,7 +340,7 @@ $(document).ready(function () {
       <a href="support-vector-machine.html">Support Vector Machine</a>
     </li>
     <li>
-      <a href="naive-bayes.html">NaÃ¯ve Bayes</a>
+      <a href="naive-bayes.html">Naïve Bayes</a>
     </li>
     <li>
       <a href="exboost.html">eXtreme Gradient Boosting</a>
@@ -395,8 +395,8 @@ $(document).ready(function () {
 <p>This tutorial will show how to implement <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Neural Network</a> for <a href="https://gis.stackexchange.com/questions/237461/distinction-between-pixel-based-and-object-based-classification">pixel based</a> <a href="https://articles.extension.org/pages/40214/whats-the-difference-between-a-supervised-and-unsupervised-image-classification">supervised classification</a> of <a href="https://sentinel.esa.int/web/sentinel/missions/sentinel-2">Sentinel-2 multispectral images</a> using <a href="https://keras.rstudio.com/">keras</a> package in <a href="https://cloud.r-project.org/">R</a> under <a href="https://www.microsoft.com/en-us/software-download/windows10">Windows 10</a>.</p>
 <p><a href="https://keras.rstudio.com/">keras</a> is a popular Python package for deep neural networks with multiple back ends, including <a href="https://www.tensorflow.org/">TensorFlow</a>, <a href="https://docs.microsoft.com/en-us/cognitive-toolkit/">Microsoft Cognitive Toolkit (CNTK)</a>, and <a href="http://deeplearning.net/software/theano/">Theano</a>. Two R packages allow you to use [Keras[(<a href="https://keras.rstudio.com/" class="uri">https://keras.rstudio.com/</a>)] from R: <a href="https://keras.rstudio.com/">keras</a> and <a href="https://github.com/statsmaths/kerasR">kerasR</a>. The <strong>keras</strong> package is able to provide a flexible and feature-rich API and can run both <a href="https://www.tensorflow.org/install/install_windows">CPU and GUP version of TensorFlow</a> in both Windows and Linux. If you want to run this tutorial with <a href="https://www.tensorflow.org/install/install_windows">GUP version of TensorFlow</a> you need following prerequisites in your system:</p>
 <ul>
-<li><p><a href="https://developer.nvidia.com/cuda-gpus">NVIDIA GUP</a>: First, you must make sure weather your computer is running with <a href="https://developer.nvidia.com/cuda-gpus">NVIDIAÂ® GPU</a> or not. Follow the instruction as described <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
-<li><p><a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>: If you have an NVIDIAÂ® GPU in your system, you need to download and install <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>. Detail installation steps can be found <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
+<li><p><a href="https://developer.nvidia.com/cuda-gpus">NVIDIA GUP</a>: First, you must make sure weather your computer is running with <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA® GPU</a> or not. Follow the instruction as described <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
+<li><p><a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>: If you have an NVIDIA® GPU in your system, you need to download and install <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Windows&amp;target_arch=x86_64&amp;target_version=10&amp;target_type=exelocal">CUDA Toolkit v9.0</a>. Detail installation steps can be found <a href="http://nvidia.custhelp.com/app/answers/detail/a_id/2040/~/identifying-the-graphics-card-model-and-device-id-in-a-pc">here</a></p></li>
 <li><p><a href="https://developer.nvidia.com/cudnn">cuDNN v7.0</a>: The download the zip file version <a href="https://developer.nvidia.com/cudnn">cuDNN v7.0</a> for your CUDA Toolkit v9.0.You need to extract the zip file and add the location where you extracted it to your system PATH. Detail installation steps can be found here <a href="F:\DeepLearning_tutorial\Satellite_Image_Calssification\h20_R_ImageCalssification\keras_R\Detail%20installation%20steps%20are%20described%20here">here</a>.</p></li>
 </ul>
 <p>Detail installation steps of Keras back-end GPU or CUP version of Tensorflow can be found <a href="https://tensorflow.rstudio.com/keras/reference/install_keras.html">here</a>.</p>
@@ -550,9 +550,9 @@ summary(model)</code></pre>
 <h4>Evaluate the model</h4>
 <pre class="r"><code>score &lt;- model %&gt;% evaluate(test, testtarget, batch_size = 100)
 cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test loss: 0.5140805</code></pre>
+<pre><code>## Test loss: 0.5191764</code></pre>
 <pre class="r"><code>cat(&#39;Test accuracy:&#39;, score[[2]], &#39;\n&#39;)</code></pre>
-<pre><code>## Test accuracy: 0.9228202</code></pre>
+<pre><code>## Test accuracy: 0.9245915</code></pre>
 </div>
 <div id="prediction-confusion-matrix---test-data" class="section level4">
 <h4>Prediction &amp; confusion matrix - test data</h4>
@@ -562,11 +562,11 @@ cat(&#39;Test loss:&#39;, score[[1]], &#39;\n&#39;)</code></pre>
 table(testtarget,class.test)</code></pre>
 <pre><code>##           class.test
 ## testtarget    0    1    2    3    4
-##          0  971   75   32    2    0
-##          1   67  793   48    5    0
-##          2   69    8 1532   30    0
-##          3    0    0   31  958    0
-##          4    0    0    3    0  170</code></pre>
+##          0  974   88   39    4    0
+##          1   69  777   41    2    0
+##          2   55   13 1532   21    0
+##          3    0    0   26  964    0
+##          4    0    0    2    0  167</code></pre>
 </div>
 <div id="predicted-class-probability" class="section level4">
 <h4>Predicted Class Probability</h4>
